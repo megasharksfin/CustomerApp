@@ -1,0 +1,21 @@
+<app-top-menu></app-top-menu>
+<div class="menu-bar">
+  <app-create (showCard)="receiveShowCard($event)"></app-create>
+  <app-toolbars [checkMark]="checkTrue"
+  [checkedCust]="markedCust"
+  [customerCheckbox]="customerCheckbox"
+  (deleteClicked)="receiveDeleteChecked($event)"
+  (uncheck)="receiveUncheck($event)"></app-toolbars>
+
+</div>
+
+
+<div class="col-container">
+  <app-menu-comp (customer_data)="receiveMessage($event)"
+  [sCard]="cardStat"></app-menu-comp>
+  <app-cust-table [customerData]="customer"
+  (customer_del)="deleteCustomer($event)"
+  (delAppear)="receiveMarked($event)"
+  (deleteMarked)="receiveDelMarked($event)"
+  (customerCheckbox)="receivedCustomerCheckbox($event)"></app-cust-table>
+</div>

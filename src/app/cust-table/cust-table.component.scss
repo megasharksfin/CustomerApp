@@ -1,0 +1,47 @@
+.cell-padding{
+    padding: 20px;
+}
+
+mat-card{
+    display: flex;
+}
+
+table{
+    flex: 1;
+}
+
+.action-btn{
+    margin-right: 5px;
+    display: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.btnTd{
+    text-align: center;
+    width: 100px;
+}
+
+tr:hover{
+    .action-btn{
+        display: inline;
+    }
+}
+
+.action-btn:hover{
+    cursor: pointer;
+}
+
+.editField{
+    max-width: 100px;
+    padding: 0;
+    padding-top: -10px;
+    margin: -15px;
+    margin-left: 0;
+}
+
+.txtEdit{
+    margin: 0;
+    padding: 0;
+    width: auto;
+}

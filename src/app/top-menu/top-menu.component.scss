@@ -1,0 +1,21 @@
+span{
+    line-height: 64px;
+    margin-left: auto;
+}
+
+.fill-space{
+    flex: 1 auto;
+}
+
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+mat-toolbar{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}

@@ -1,0 +1,10 @@
+@import '../../colors.scss';
+
+button{
+    margin: 5px;
+    background-color: $accent;
+    color: $onPrimary;
+    border: 2px $accent solid;
+    border-radius: 5px;
+    margin-left: 20px;
+}

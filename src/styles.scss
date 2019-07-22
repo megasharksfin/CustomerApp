@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import "node_modules/bootstrap/scss/grid.scss";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-grid-list{
+    width: 100%;
+    height: 100%;
+}
+
+.col-container{
+    display: flex;
+    margin: 10px;
+    flex: 0.53;
+}
+
+app-cust-table{
+    flex: 2;
+    margin: 10px;
+}
+
+app-menu-comp{
+    height: auto;
+}
+
+.menu-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

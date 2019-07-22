@@ -1,0 +1,36 @@
+<div class="create-container" *ngIf="sCard">
+    <mat-card>
+        <h2>Create new customer</h2>
+        <form class="form-class" [formGroup]="createForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline" class="">
+                <mat-label>Customer Code</mat-label>
+                <input matInput placeholder="Customer Code" formControlName="cust_Code" required />
+            </mat-form-field>
+            <br />
+    
+            <mat-form-field appearance="outline" class="">
+                <mat-label>Customer Name</mat-label>
+                <input matInput formControlName="cust_Name" placeholder="Customer Name" required />
+            </mat-form-field>
+            <br />
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Customer Address</mat-label>
+                <textarea matInput class="custAdd" formControlName="cust_Add" placeholder="Customer Address" required></textarea>
+            </mat-form-field>
+            <br />
+    
+            <mat-form-field appearance="outline" class="">
+                <mat-label>Customer BU</mat-label>
+                <input matInput formControlName="cust_BU" placeholder="Customer BU" required />
+            </mat-form-field>
+            <br />
+    
+            <div class="button-cont">
+                <button mat-stroked-button type="submit">Submit</button>
+                <button mat-stroked-button type="button" (click)="clearForms()">Clear</button>
+            </div>
+        </form>
+    </mat-card>
+    
+</div>

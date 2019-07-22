@@ -1,0 +1,76 @@
+<mat-card>
+    <table mat-table [dataSource]="customerData" class="mat-elevation-z8">
+        <ng-container matColumnDef="mark">
+            <th mat-header-cell *matHeaderCellDef class="cell-padding"> <mat-checkbox (change)="markAll()" (change)="getMarkedAll()" [(ngModel)]="selectAll"></mat-checkbox> </th>
+            <td mat-cell *matCellDef="let customer" class="cell-padding"> <mat-checkbox [(ngModel)]="customer.checked" (change)="getMarked()"></mat-checkbox> </td>
+        </ng-container>
+        <ng-container matColumnDef="code">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="cell-padding">Customer Code</th>
+            <td mat-cell *matCellDef="let customer" class="cell-padding">  
+                <span *ngIf="!customer.editable" > {{ customer.code }} </span>
+                <mat-form-field appearance="standard" *ngIf="customer.editable" class="editField">
+                    <input matInput 
+                    placeholder="Edit code" 
+                    [(ngModel)]="customer.code" 
+                    class="txtEdit">
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="cell-padding">Customer Name</th>
+            <td mat-cell *matCellDef="let customer" class="cell-padding"> 
+                <span *ngIf="!customer.editable"> {{ customer.name }} </span>
+                <mat-form-field appearance="standard" *ngIf="customer.editable" class="editField">
+                    <input matInput 
+                    placeholder="Edit name" 
+                    [(ngModel)]="customer.name" 
+                    class="txtEdit">
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="add">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="cell-padding">Customer Address</th>
+            <td mat-cell *matCellDef="let customer" class="cell-padding"> 
+                <span *ngIf="!customer.editable"> {{ customer.add }} </span>
+                <mat-form-field appearance="standard" *ngIf="customer.editable" class="editField">
+                    <input matInput 
+                    placeholder="Edit address" 
+                    [(ngModel)]="customer.add" 
+                    class="txtEdit">
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="bu">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="cell-padding">Customer BU</th>
+            <td mat-cell *matCellDef="let customer" class="cell-padding">  
+                <span *ngIf="!customer.editable"> {{ customer.bu }} </span>
+                <mat-form-field appearance="standard" *ngIf="customer.editable" class="editField">
+                    <input matInput 
+                    placeholder="Edit address" 
+                    [(ngModel)]="customer.bu" 
+                    class="txtEdit">
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef class="cell-padding">Actions</th>
+            <td mat-cell *matCellDef="let customer" class="cell-padding btnTd"> 
+                <button mat-mini-fab class="material-icons action-btn" (click)="editCustomer(customer)" *ngIf="!customer.editable"><mat-icon aria-hidden="false" aria-label="Edit">edit</mat-icon></button>
+                <button mat-mini-fab class="material-icons action-btn" (click)="editCustomer(customer)" *ngIf="customer.editable"><mat-icon aria-hidden="false" aria-label="Save">save</mat-icon></button>
+                <button mat-mini-fab class="material-icons action-btn" (click)="deleteCustomer(customer)"><mat-icon aria-hidden="false" aria-label="Delete">delete</mat-icon></button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns; let i = index"></tr>
+
+        <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
+    </table>
+</mat-card>

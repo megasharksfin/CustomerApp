@@ -1,0 +1,40 @@
+@import '../../colors.scss';
+
+mat-form-field{
+    margin: 3px;
+    margin-right: 0;
+}
+
+button{
+    margin: 5px;
+    background-color: $accent;
+    color: $onPrimary;
+    border: 2px $accent solid;
+    border-radius: 5px;
+}
+
+button:hover{
+    background: transparent;
+    color: $accent;
+    border: 2px $accent solid;
+}
+.create-container{
+    margin: 10px;
+    min-width: 260px;
+}
+
+.nCust.hidden{
+    max-height: 0;
+}
+
+.custAdd{
+    width: 200px;
+}
+
+.button-cont{
+    display: flex;
+}
+
+.button-cont button{
+    flex: 1;
+}
