@@ -13,7 +13,7 @@ export class CustTableComponent implements OnInit {
   @Output() customerCheckbox = new EventEmitter<Customer[]>();
   @Output() delAppear = new EventEmitter<boolean>();
   @Output() deleteMarked = new EventEmitter<Customer>();
-  isVisible = false;
+  isVisible = true;
   selectAll = false;
   markedBox = false;
   markedArray: Customer[];
